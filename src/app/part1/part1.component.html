@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div *ngFor="let std of students">
+          <img src="{{std.pic}}" alt="user-image">
+          <br><br>
+          <p><strong>{{std.firstName}} {{std.lastName}}</strong></p>
+          <p>Email: {{std.email}}</p>
+          <p>Company: {{std.company}}</p>
+          <p>Skill: {{std.skill}}</p>
+          <p>Average: {{ getAVG() }}</p>
+        </div>
+    </div>
+  </div>
+</div>
+

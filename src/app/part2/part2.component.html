@@ -1,0 +1,20 @@
+<div class="container-fluid background p-5">
+  <div class="container jumbo">
+    <div class="row p-4" *ngFor="let std of students">
+      <div class="bg-primary img-container p-0 col-xl-1 col-lg-2 col-md-3 col-sm-4 col-xs-2">
+        <img class="img-profile" src="{{ std.pic }}" />
+      </div>
+
+      <div class="bg-danger att-container p-0 float-left line col-xl-6 col-lg-6 col-md-6 col-sm-8 col-xs-6">
+        <h3 style="text-transform: uppercase; font-weight: 700;">
+          {{ std.firstName }} {{ std.lastName }}
+        </h3>
+        <p>Email: {{ std.email }}</p>
+        <p>Company: {{ std.company }}</p>
+        <p>Skill: {{ std.skill }}</p>
+        <p>Average:{{ getAVG() }}</p>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
