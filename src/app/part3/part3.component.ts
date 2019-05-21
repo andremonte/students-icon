@@ -1,6 +1,7 @@
 import { Students } from '../students/students.model';
 import { Component, OnInit } from '@angular/core';
 import { StudentsService } from './../students/students.service';
+import { stringify } from '@angular/core/src/util';
 
 @Component({
   selector: 'app-part3',
@@ -46,10 +47,19 @@ export class Part3Component implements OnInit {
     }
   }
 
+  procura(event: any) {
+    this.filteredStudents = this.students.filter(function(value) {
+      return value.firstName.toLowerCase===event.target.value;
+    })
+    console.log('QUANTITY: ' + this.filteredStudents.length);
+  }
+
   searchStudent(event: any) {
+    alert(event);
     this.filteredStudents = this.students.filter((stu) => {
       return stu.firstName.toLowerCase().includes(event.target.value)
         || stu.lastName.toLowerCase().includes(event.target.value);
     })
   }
+
 }

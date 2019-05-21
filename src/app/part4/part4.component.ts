@@ -14,6 +14,7 @@ export class Part4Component implements OnInit {
   filteredStudents: Students[];
   grades = [];
   gradesNum = [];
+  expand: Boolean = false;
   constructor(private studentServ: StudentsService) { }
 
   ngOnInit() {

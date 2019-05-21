@@ -32,13 +32,15 @@
   <div class="container jumbo">
     <div class="row">
       <input
+        #search
         id="StudentSearch"
         name="StdSearch"
         type="text"
         class="pt-3 text-line"
         placeholder="Search by name"
-        (keyup)="searchStudent($event)"
+        (keyup)="procura($event)"
       />
+      <div>{{ values }}</div>
     </div>
     <div class="row p-4" *ngFor="let std of students; let i = index">
       <div

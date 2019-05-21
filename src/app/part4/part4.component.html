@@ -26,13 +26,15 @@
         <p>Average: {{ gradesNum[i] }}</p>
         <br />
       </div>
-      <div class="plus" *ngIf="!expand" (click)="moreMinus()">
+      <div class="plus" *ngIf="!expand; else elseTemplate" (click)="moreMinus()">
         <i class="float-right fas fa-plus fa-2x"></i>
       </div>
-      <div class="plus" *ngIf="expand" (click)="moreMinus()">
+      <ng-template #elseTemplate>
+      <div class="plus" (click)="moreMinus()">
         <i class="float-right fas fa-minus fa-2x"></i>
         <p>Test 1: {{std.grades}}%</p>
       </div>
+    </ng-template>
       <div class="m-0 p-0 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <hr width="100%" />
       </div>
