@@ -14,7 +14,9 @@ export class Part4Component implements OnInit {
   filteredStudents: Students[];
   grades = [];
   gradesNum = [];
+  testando = [];
   expand: Boolean = false;
+  open: Boolean = false;
   constructor(private studentServ: StudentsService) { }
 
   ngOnInit() {
@@ -32,6 +34,15 @@ export class Part4Component implements OnInit {
 
   ngOnDestroy() {
     this.getstudentSub.unsubscribe();
+  }
+
+  getGrades() {
+    for(let i = 0; i < this.students.length; i++) {
+      this.testando[i] = this.filteredStudents[i].grades;
+    }
+    for(let i = 0; i < this.students.length; i++) {
+      console.log(this.testando[i]);
+    }
   }
 
   getAVG() {
@@ -60,6 +71,15 @@ export class Part4Component implements OnInit {
     }
     else {
       this.expand = false;
+    }
+  }
+
+  colapse() {
+    if(!this.open) {
+      this.open = true;
+    }
+    else {
+      this.open = false;
     }
   }
 
