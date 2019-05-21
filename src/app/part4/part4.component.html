@@ -2,21 +2,17 @@
   <div class="container jumbo">
     <div class="row">
       <input
-      type="text"
-      class="pt-3 text-line"
-      placeholder="Search by name"
-      (keyup)="searchStd($event)"
-    />
+        type="text"
+        class="pt-3 text-line"
+        placeholder="Search by name"
+        (keyup)="searchStd($event)"
+      />
     </div>
-    <div class="row p-4" *ngFor="let std of filteredStudents; let i = index">
-      <div
-        class="img-container p-0 col-xl-1 col-lg-2 col-md-3 col-sm-4 col-xs-2"
-      >
+    <div class="bg-primary row p-4" *ngFor="let std of filteredStudents; let i = index">
+      <div class="bg-success img-container p-0 col-xl-1 col-lg-2 col-md-3 col-sm-4 col-xs-12">
         <img class="img-profile" src="{{ std.pic }}" />
       </div>
-      <div
-        class="p-0 float-left line col-xl-10 col-lg-9 col-md-8 col-sm-7 col-xs-9"
-      >
+      <div class="bg-secondary p-0 float-left line col-xl-9 col-lg-9 col-md-8 col-sm-7 col-xs-11">
         <h3 style="text-transform: uppercase; font-weight: 700;">
           {{ std.firstName }} {{ std.lastName }}
         </h3>
@@ -26,15 +22,19 @@
         <p>Average: {{ gradesNum[i] }}</p>
         <br />
       </div>
-      <div class="plus" *ngIf="!expand; else elseTemplate" (click)="moreMinus()">
+      <div
+        class="bg-danger float-right line col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 plus"
+        *ngIf="!expand; else elseTemplate"
+        (click)="moreMinus()"
+      >
         <i class="float-right fas fa-plus fa-2x"></i>
       </div>
       <ng-template #elseTemplate>
-      <div class="plus" (click)="moreMinus()">
-        <i class="float-right fas fa-minus fa-2x"></i>
-        <p>Test 1: {{std.grades}}%</p>
-      </div>
-    </ng-template>
+        <div class="plus" (click)="moreMinus()">
+          <i class="float-right fas fa-minus fa-2x"></i>
+          <p>Test 1: {{ std.grades }}%</p>
+        </div>
+      </ng-template>
       <div class="m-0 p-0 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <hr width="100%" />
       </div>
