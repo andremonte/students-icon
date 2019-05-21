@@ -24,17 +24,18 @@
       </div>
       <div
         class="bg-danger float-right line col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 plus"
-        *ngIf="!expand; else elseTemplate"
+        *ngIf="!expand;"
         (click)="moreMinus()"
       >
         <i class="float-right fas fa-plus fa-2x"></i>
       </div>
-      <ng-template #elseTemplate>
+      <div
+      class="bg-danger float-right line col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 plus"
+      *ngIf="expand;">
         <div class="plus" (click)="moreMinus()">
           <i class="float-right fas fa-minus fa-2x"></i>
-          <p>Test 1: {{ std.grades }}%</p>
         </div>
-      </ng-template>
+      </div>
       <div class="m-0 p-0 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <hr width="100%" />
       </div>
