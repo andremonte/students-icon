@@ -9,25 +9,40 @@ import { StudentsService } from './../students/students.service';
 })
 export class Part2Component implements OnInit {
 
-  public students: Students[];
-  public grades = [];
+  students: Students[] = [];
+  getstudentSub;
+  filteredStudents: Students[];
+  grades = [];
+  gradesNum = [];
   constructor(private studentServ: StudentsService) { }
 
   ngOnInit() {
-    this.studentServ.getAllStudents()
-    .subscribe(data => {this.students = data.students; console.log(this.students)});
+    try {
+      this.getstudentSub = this.studentServ.getAllStudents()
+        .subscribe(std => {
+          { this.students = std.students; this.getAVG(); console.log(this.students) }
+          this.filteredStudents = std.students;
+        })
+    }
+    catch (err) {
+      throw err;
+    }
   }
 
-  getAVG(){
+  ngOnDestroy() {
+    this.getstudentSub.unsubscribe();
+  }
 
-    console.log(this.students[0].grades);
-     /* console.log(this.students[0].grades) */
-/*     for(let i = 0; i < this.students.length; i++) {
-      console.log("$$$$$$$ " + this.students[i].grades);
-      this.grades.push(this.students[i].grades);
-    } */
-/*     for(let i = 0; i < this.grades.length; i++) {
-      console.log("GRADES "+ i + this.grades[0]);
-    } */
+  getAVG() {
+    for (let i = 0; i < this.students.length; i++) {
+      this.grades[i] = 0;
+      for (let z = 0; z < 8; z++) {
+        this.grades[i] += Number(this.students[i].grades[z]);
+        this.gradesNum[i] = parseFloat(this.grades[i]);
+      }
+    }
+    for (let i = 0; i < this.gradesNum.length; i++) {
+      this.gradesNum[i] = (this.gradesNum[i] / 8);
+    }
   }
 }
