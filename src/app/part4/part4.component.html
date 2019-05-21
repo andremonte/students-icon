@@ -45,13 +45,18 @@
           <i class="float-right fas fa-minus fa-2x"></i>
         </div>
       </div>
+      <!--GRADES-->
       <div *ngIf="std.open" (click)="description(std)">
-        <div *ngFor="let mark of filteredStudents[i].grades; let z = index">
-          <p>
+        <div
+          *ngFor="let mark of filteredStudents[i].grades; let z = index"
+          class="p-0 float-left line col-xl-12 col-lg-7 col-md-7 col-sm-7 col-xs-12"
+          >
+          <p class="alignment float-left">
             Test {{ z + 1 }}:
-            <span class="pl-4">{{ filteredStudents[i].grades[z] }}%</span>
+            <span class="pl-3">{{ filteredStudents[i].grades[z] }}%</span>
           </p>
         </div>
+        <!--GRADES_END-->
       </div>
       <!--Only shows when the user click on the plus sign-->
 
