@@ -4,7 +4,7 @@ export class Students {
   email: string;
   firstName: string;
   grades: [];
-  id: number;
+  id: string;
   lastName: string;
   pic: string;
   skill: string;

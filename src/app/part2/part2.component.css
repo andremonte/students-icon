@@ -29,11 +29,3 @@ p{
   padding-left: 25px;
   padding-right: 25px;
 }
-
-.horizontal-line {
-  width: 50%;
-  margin: auto;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  border-color: grey;
-}

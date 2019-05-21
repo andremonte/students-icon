@@ -19,6 +19,8 @@ export class Part2Component implements OnInit {
   }
 
   getAVG(){
+
+    console.log(this.students[0].grades);
      /* console.log(this.students[0].grades) */
 /*     for(let i = 0; i < this.students.length; i++) {
       console.log("$$$$$$$ " + this.students[i].grades);

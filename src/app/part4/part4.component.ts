@@ -1,3 +1,5 @@
+import { StudentsService } from './../students/students.service';
+import { Students } from './../students/students.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Part4Component implements OnInit {
 
-  constructor() { }
+  students: Students[];
+  grades = [];
+  filteredStudents: Students[];
+  expand: boolean = false;
+
+  constructor(private studentServ: StudentsService) { }
 
   ngOnInit() {
+    this.studentServ.getAllStudents()
+    .subscribe(data => {this.students = data.students; console.log(this.students)});
+  }
+
+  moreMinus() {
+    if(!this.expand) {
+      this.expand = true;
+    }
+    else {
+      this.expand = false;
+    }
   }
 
 }

@@ -11,12 +11,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Part1Component implements OnInit {
 
-  students: Students[];
+  students: Students[] = [];
   getstudentSub;
-  private loadingError: boolean = false;
   filteredStudents: Students[];
-
-  private grades = [];
+  grades = [];
   constructor(private studentServ: StudentsService) { }
 
   ngOnInit() {
@@ -28,10 +26,22 @@ export class Part1Component implements OnInit {
       })
     }
     catch (err) {
-      this.loadingError = true;
+      throw err;
+    }
+    this.getAVG();
+  }
+  ngOnDestroy() {
+    this.getstudentSub.unsubscribe();
+  }
+  getAVG() {
+    for(let i = 0; i < this.students.length; i++) {
+      console.log('quantidade de estudantes: '+ i);
+      for(let z = 0; z < 7; z++) {
+        console.log('Quantidade de notas: ' + z);
+        /* this.grades[i] += this.students[i].grades[z]; */
+      }
+        /* console.log(this.grades[i]); */
     }
   }
-    /* this.studentServ.getAllStudents()
-    .subscribe(data => {this.students = data.students; console.log(this.students)}); */
-    getAVG(){}
+
   }

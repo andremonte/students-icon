@@ -4,34 +4,45 @@
   border-radius: 50%;
   border: 1px solid black;
   margin: auto;
+  padding: auto;
+}
+.img-container{
+  min-width: 11%;
 }
 
 .line {
-  line-height: 10px;
+  line-height: 5px;
 }
 
 p{
   padding-left: 15px;
 }
 
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
+.background {
+  background-color: rgb(239, 239, 239);
 }
 
-.example-full-width {
-  width: 100%;
+.jumbo {
+  border-radius: 10px;
+  border: 1px solid #888888;
+  background-color: white;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .text-line {
   background-color: transparent;
-  color: #eeeeee;
+  font-size: 23px;
+  color: #676363;
   outline: none;
   outline-style: none;
+  outline-offset: 0;
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: solid #eeeeee 1px;
-
+  border-bottom: solid #dad9d9 2px;
+  padding: 3px;
+  max-width: 100%;
+  min-width: 100%;
 }
+

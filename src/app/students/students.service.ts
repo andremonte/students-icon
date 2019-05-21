@@ -14,9 +14,9 @@ export class StudentsService {
   constructor(private http: HttpClient) {}
 
   //casting observable into Students array
-  getAllStudents(): Observable<Students[]> {
+  getAllStudents(): Observable<{students: Students[]}> {
     //return this.http.get<Students[]>(this.studentsUrl);
-    return this.http.get<Students[]>(`${this.studentsUrl}`);
+    return this.http.get<{students: Students[]}>(`${this.studentsUrl}`);
   }
 
  /*  getStudent(id: number | string) {

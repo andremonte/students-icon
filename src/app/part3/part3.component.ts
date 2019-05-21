@@ -9,9 +9,9 @@ import { StudentsService } from './../students/students.service';
 })
 export class Part3Component implements OnInit {
 
-  private students: Students[];
-  private grades = [];
-  private filteredStudents: Students[];
+  students: Students[];
+  grades = [];
+  filteredStudents: Students[];
 
   constructor(private studentServ: StudentsService) { }
 
@@ -20,8 +20,8 @@ export class Part3Component implements OnInit {
     .subscribe(data => {this.students = data.students; console.log(this.students)});
   }
 
-  getAVG(){
-  }
+  /* getAVG(){
+  } */
 
   searchStudent(event: any) {
     this.filteredStudents = this.students.filter((student) => {
@@ -29,4 +29,8 @@ export class Part3Component implements OnInit {
       || student.lastName.toLowerCase().includes(event.target.value);
     })
   }
+/*   changeColor() {
+    let color = document.getElementById('chngclr');
+    color.style.color('red');
+  } */
 }
