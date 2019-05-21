@@ -8,7 +8,7 @@
         placeholder="Search by name"
       />
     </div>
-    <div class="row p-4" *ngFor="let std of students">
+    <div class="row p-4" *ngFor="let std of students; let i = index">
       <div
         class="img-container p-0 col-xl-1 col-lg-2 col-md-3 col-sm-4 col-xs-2"
       >
@@ -23,14 +23,15 @@
         <p>Email: {{ std.email }}</p>
         <p>Company: {{ std.company }}</p>
         <p>Skill: {{ std.skill }}</p>
-        <p>Average:s</p>
+        <p>Average: {{ gradesNum[i] }}</p>
         <br />
       </div>
       <div class="plus" *ngIf="!expand" (click)="moreMinus()">
         <i class="float-right fas fa-plus fa-2x"></i>
       </div>
-     <div class="plus" *ngIf="expand" (click)="moreMinus()">
+      <div class="plus" *ngIf="expand" (click)="moreMinus()">
         <i class="float-right fas fa-minus fa-2x"></i>
+        <p>Test 1: {{std.grades}}%</p>
       </div>
       <div class="m-0 p-0 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <hr width="100%" />

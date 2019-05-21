@@ -20,7 +20,7 @@ export class Part3Component implements OnInit {
     try {
       this.getstudentSub = this.studentServ.getAllStudents()
         .subscribe(std => {
-          { this.students = std.students; this.getAVG(); console.log(this.students) }
+          { this.students = std.students; this.getAVG(); /*console.log(this.students)*/ }
           this.filteredStudents = std.students;
         })
     }
@@ -44,5 +44,12 @@ export class Part3Component implements OnInit {
     for (let i = 0; i < this.gradesNum.length; i++) {
       this.gradesNum[i] = (this.gradesNum[i] / 8);
     }
+  }
+
+  searchStudent(event: any) {
+    this.filteredStudents = this.students.filter((stu) => {
+      return stu.firstName.toLowerCase().includes(event.target.value)
+        || stu.lastName.toLowerCase().includes(event.target.value);
+    })
   }
 }
