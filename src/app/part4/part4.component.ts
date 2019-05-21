@@ -14,16 +14,14 @@ export class Part4Component implements OnInit {
   filteredStudents: Students[];
   grades = [];
   gradesNum = [];
-  testando = [];
-  expand: Boolean = false;
-  open: Boolean = false;
+
   constructor(private studentServ: StudentsService) { }
 
   ngOnInit() {
     try {
       this.getstudentSub = this.studentServ.getAllStudents()
         .subscribe(std => {
-          { this.students = std.students; this.getAVG(); console.log(this.students) }
+          { this.students = std.students; this.getAVG(); /*adicionei*/this.setOpenFalse(); console.log(this.students) }
           this.filteredStudents = std.students;
         })
     }
@@ -34,15 +32,6 @@ export class Part4Component implements OnInit {
 
   ngOnDestroy() {
     this.getstudentSub.unsubscribe();
-  }
-
-  getGrades() {
-    for(let i = 0; i < this.students.length; i++) {
-      this.testando[i] = this.filteredStudents[i].grades;
-    }
-    for(let i = 0; i < this.students.length; i++) {
-      console.log(this.testando[i]);
-    }
   }
 
   getAVG() {
@@ -65,21 +54,19 @@ export class Part4Component implements OnInit {
     })
   }
 
-  moreMinus() {
-    if(!this.expand) {
-      this.expand = true;
-    }
-    else {
-      this.expand = false;
+  //adicionei
+  setOpenFalse() {
+    for(let i = 0; i < this.students.length; i++) {
+      this.students[i].open = false;
     }
   }
 
-  colapse() {
-    if(!this.open) {
-      this.open = true;
+  description(obj){
+    if(!obj.open) {
+      obj.open = true;
     }
     else {
-      this.open = false;
+      obj.open = false;
     }
   }
 

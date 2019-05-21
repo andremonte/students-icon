@@ -8,4 +8,6 @@ export class Students {
   lastName: string;
   pic: string;
   skill: string;
+  //adicionei esse último campo.
+  open: boolean;
 }

@@ -51,4 +51,5 @@ p{
 }
 .plus :hover{
   cursor: pointer;
+  color:black;
 }
