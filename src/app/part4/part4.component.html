@@ -2,13 +2,13 @@
   <div class="container jumbo">
     <div class="row">
       <input
-        id="chngclr"
-        type="text"
-        class="pt-3 text-line"
-        placeholder="Search by name"
-      />
+      type="text"
+      class="pt-3 text-line"
+      placeholder="Search by name"
+      (keyup)="searchStd($event)"
+    />
     </div>
-    <div class="row p-4" *ngFor="let std of students; let i = index">
+    <div class="row p-4" *ngFor="let std of filteredStudents; let i = index">
       <div
         class="img-container p-0 col-xl-1 col-lg-2 col-md-3 col-sm-4 col-xs-2"
       >

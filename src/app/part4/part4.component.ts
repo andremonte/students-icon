@@ -47,6 +47,13 @@ export class Part4Component implements OnInit {
     }
   }
 
+  searchStd(event: any) {
+    this.filteredStudents = this.students.filter((value) => {
+      return value.firstName.toLowerCase().includes(event.target.value.toLowerCase())
+      || value.lastName.toLowerCase().includes(event.target.value.toLowerCase());
+    })
+  }
+
   moreMinus() {
     if(!this.expand) {
       this.expand = true;

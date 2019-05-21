@@ -47,19 +47,11 @@ export class Part3Component implements OnInit {
     }
   }
 
-  procura(event: any) {
+  searchStd(event: any) {
     this.filteredStudents = this.students.filter((value) => {
       return value.firstName.toLowerCase().includes(event.target.value.toLowerCase())
       || value.lastName.toLowerCase().includes(event.target.value.toLowerCase());
     })
   }
-
-/*   searchStudent(event: any) {
-    alert(event);
-    this.filteredStudents = this.students.filter((stu) => {
-      return stu.firstName.toLowerCase().includes(event.target.value)
-        || stu.lastName.toLowerCase().includes(event.target.value);
-    })
-  } */
 
 }

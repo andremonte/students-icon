@@ -8,7 +8,7 @@
         type="text"
         class="pt-3 text-line"
         placeholder="Search by name"
-        (keyup)="procura($event)"
+        (keyup)="searchStd($event)"
       />
     </div>
     <div class="row p-4" *ngFor="let std of filteredStudents; let i = index">
