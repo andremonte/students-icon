@@ -11,13 +11,22 @@ export class Part3Component implements OnInit {
 
   students: Students[];
   grades = [];
+  getstudentSub;
   filteredStudents: Students[];
 
   constructor(private studentServ: StudentsService) { }
 
   ngOnInit() {
-    this.studentServ.getAllStudents()
-    .subscribe(data => {this.students = data.students; console.log(this.students)});
+    try {
+      this.getstudentSub = this.studentServ.getAllStudents()
+      .subscribe(std => {
+        {this.students = std.students; console.log(this.students)}
+        this.filteredStudents = std.students;
+      })
+    }
+    catch (err) {
+      throw err;
+    }
   }
 
   /* getAVG(){

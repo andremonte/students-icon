@@ -15,33 +15,56 @@ export class Part1Component implements OnInit {
   getstudentSub;
   filteredStudents: Students[];
   grades = [];
+  gradesNum = [];
   constructor(private studentServ: StudentsService) { }
 
   ngOnInit() {
     try {
       this.getstudentSub = this.studentServ.getAllStudents()
-      .subscribe(std => {
-        {this.students = std.students; console.log(this.students)}
-        this.filteredStudents = std.students;
-      })
+        .subscribe(std => {
+          { this.students = std.students; this.media(); console.log(this.students) }
+          this.filteredStudents = std.students;
+        })
     }
     catch (err) {
       throw err;
     }
-    this.getAVG();
   }
+
   ngOnDestroy() {
     this.getstudentSub.unsubscribe();
   }
-  getAVG() {
+
+  media() {
     for(let i = 0; i < this.students.length; i++) {
-      console.log('quantidade de estudantes: '+ i);
-      for(let z = 0; z < 7; z++) {
-        console.log('Quantidade de notas: ' + z);
-        /* this.grades[i] += this.students[i].grades[z]; */
+      this.grades[i] = 0;
+      for(let z = 0; z < 8; z++) {
+        this.grades[i] += Number(this.students[i].grades[z]);
+        this.gradesNum[i] = parseFloat(this.grades[i]);
       }
-        /* console.log(this.grades[i]); */
+    }
+    for(let i = 0; i < this.gradesNum.length; i++) {
+      this.gradesNum[i] = (this.gradesNum[i]/8);
+      //console.log(this.gradesNum[i]);
     }
   }
+}
+/*   getAVG() {
+    for (let i = 0; i < this.students.length; i++) {
+      this.grades[i] = 0;
+      for (let z = 0; z < 8; z++) {
+        this.grades[i] += Number(this.students[i].grades[z]);
+        var num = parseFloat(this.grades[i]);
+      }
+      this.gradesNum.push(num / 8);
+      //console.log("SUM: " + this.gradesNum);
+    }
 
-  }
+  for (let i = 0; i < 25; i++) {
+      this.gd[i] = this.gradesNum[i];
+    }
+    console.log("########################" + this.gd.length);
+    for(let i = 0; i < this.grades.length; i++) {
+      console.log(this.gd[0]);
+    }
+  } */

@@ -32,10 +32,12 @@
     <div class="container jumbo">
       <div class="row">
           <input
-            id="chngclr"
+            id="StudentSearch"
+            name="StdSearch"
             type="text"
             class="pt-3 text-line"
             placeholder="Search by name"
+            (keyup)="searchStudent($event)"
             />
       </div>
       <div class="row p-4" *ngFor="let std of students">
