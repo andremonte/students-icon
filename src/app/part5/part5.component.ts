@@ -72,22 +72,23 @@ export class Part5Component implements OnInit {
   }
 
   sendForm(f: NgForm, index_: number) {
-    let l: number = 0;
+
     if (f.invalid) {
       return
     }
     else {
       var str = f.value.inputTag;
-      console.log('Adicionando: ' + str + ' no cara: ' + index_ + ' no index: ' + l);
+      console.log('Adicionando: ' + str + ' no cara: ' + index_ + ' no index: ' );
       //this.tags.push({index: index_, tag:str});
       //this.filteredStudents[index_].tags = str;
       this.filteredStudents[index_].tags = str;
+
       //this.tg.splice(index_, 0, str);
       /*     this.filteredStudents[index_].tags[l] = str;
           console.log(this.filteredStudents[index_].tags[l]); */
     }
     console.log(this.tg[0]);
-    l++;
+
     f.reset();
   }
 

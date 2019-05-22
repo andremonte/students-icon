@@ -45,14 +45,6 @@ p {
   max-width: 95%;
   min-width: 95%;
 }
-.img-profile2 {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
 
 .signal-color {
   color: #bbb6b6;

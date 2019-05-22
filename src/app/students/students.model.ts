@@ -10,5 +10,4 @@ export class Students {
   pic: string;
   skill: string;
   open: boolean;
-  tags: string;
 }

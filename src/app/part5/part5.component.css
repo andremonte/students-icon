@@ -66,7 +66,7 @@ p {
   border-left: none;
   border-right: none;
   border-bottom: solid #dad9d9 2px;
-  padding: 3px;
+  margin-left:150px;
   max-width: 150px;
   min-width: 150px;
 }
@@ -79,4 +79,16 @@ p {
   background-color: #dad9d9;
   color: #504f4f;
   border: none;
+}
+
+.alignment {
+  padding-left: 25%;
+}
+
+.ajust {
+padding-left: 5%;
+}
+
+.r {
+  margin-left: 18%;
 }
