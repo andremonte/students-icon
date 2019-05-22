@@ -27,8 +27,8 @@ p{
   border-radius: 10px;
   border: 1px solid #888888;
   background-color: white;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 150px;
+  padding-right: 150px;
 }
 
 .text-line {
@@ -75,6 +75,4 @@ p{
   border-bottom: solid black 2px !important;
 }
 
-.ppp {
-  offset: -1;
-}
+
