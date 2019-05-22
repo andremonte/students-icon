@@ -50,8 +50,30 @@ export class Part3Component implements OnInit {
   searchStd(event: any) {
     this.filteredStudents = this.students.filter((value) => {
       return value.firstName.toLowerCase().includes(event.target.value.toLowerCase())
-      || value.lastName.toLowerCase().includes(event.target.value.toLowerCase());
+        || value.lastName.toLowerCase().includes(event.target.value.toLowerCase());
     })
   }
+
+  makeDarkLine() {
+    var line = document.getElementById('dark');
+
+    if (!line.className.match('dark')) {
+      line.classList.add('dark');
+    }
+    else {
+      line.classList.remove('dark');
+    }
+  }
+  removeDarkLine() {
+    var line = document.getElementById('dark');
+
+    if (line.className.match('dark')) {
+      line.classList.remove('dark');
+    }
+    else {
+      line.classList.add('dark');
+    }
+  }
+
 
 }

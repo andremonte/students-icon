@@ -15,11 +15,7 @@ export class StudentsService {
 
   //casting observable into Students array
   getAllStudents(): Observable<{students: Students[]}> {
-    //return this.http.get<Students[]>(this.studentsUrl);
     return this.http.get<{students: Students[]}>(`${this.studentsUrl}`);
   }
 
- /*  getStudent(id: number | string) {
-    return this.http.get<Students[]>(`${this.url}/employee-raw/${id}`);
-  } */
 }

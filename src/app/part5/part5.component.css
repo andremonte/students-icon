@@ -7,7 +7,7 @@
   margin-right: auto;
   display: block;
 }
-.img-container{
+.img-container {
   min-width: 11%;
 }
 
@@ -15,7 +15,7 @@
   line-height: 5px;
 }
 
-p{
+p {
   padding-left: 15px;
 }
 
@@ -48,11 +48,11 @@ p{
 }
 
 .plus {
-  color:#bbb6b6;
+  color: #bbb6b6;
 }
-.plus :hover{
+.plus :hover {
   cursor: pointer;
-  color:black;
+  color: black;
 }
 
 .addTag {
@@ -75,4 +75,8 @@ p{
   border-bottom: solid black 2px !important;
 }
 
-
+.change-btn-color {
+  background-color: #dad9d9;
+  color: #504f4f;
+  border: none;
+}

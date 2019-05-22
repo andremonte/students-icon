@@ -1,3 +1,4 @@
+// responsible to ditact how the object Students is.
 export class Students {
   city: string;
   company: string;
@@ -8,6 +9,6 @@ export class Students {
   lastName: string;
   pic: string;
   skill: string;
-  //adicionei esse último campo.
   open: boolean;
+  tags: string;
 }

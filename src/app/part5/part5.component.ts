@@ -9,12 +9,12 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./part5.component.css']
 })
 export class Part5Component implements OnInit {
-
   students: Students[] = [];
   getstudentSub;
   filteredStudents: Students[];
   grades = [];
   gradesNum = [];
+  tg = [];
 
   constructor(private studentServ: StudentsService) { }
 
@@ -51,19 +51,19 @@ export class Part5Component implements OnInit {
   searchStd(event: any) {
     this.filteredStudents = this.students.filter((value) => {
       return value.firstName.toLowerCase().includes(event.target.value.toLowerCase())
-      || value.lastName.toLowerCase().includes(event.target.value.toLowerCase());
+        || value.lastName.toLowerCase().includes(event.target.value.toLowerCase());
     })
   }
 
   //adicionei
   setOpenFalse() {
-    for(let i = 0; i < this.students.length; i++) {
+    for (let i = 0; i < this.students.length; i++) {
       this.students[i].open = false;
     }
   }
 
-  description(obj){
-    if(!obj.open) {
+  description(obj) {
+    if (!obj.open) {
       obj.open = true;
     }
     else {
@@ -71,34 +71,60 @@ export class Part5Component implements OnInit {
     }
   }
 
-  sendForm(f: NgForm) {
-    if(f.invalid) {
+  sendForm(f: NgForm, index_: number) {
+    let l: number = 0;
+    if (f.invalid) {
       return
     }
     else {
-    console.log(f.control.value);
+      var str = f.value.inputTag;
+      console.log('Adicionando: ' + str + ' no cara: ' + index_ + ' no index: ' + l);
+      //this.tags.push({index: index_, tag:str});
+      //this.filteredStudents[index_].tags = str;
+      this.filteredStudents[index_].tags = str;
+      //this.tg.splice(index_, 0, str);
+      /*     this.filteredStudents[index_].tags[l] = str;
+          console.log(this.filteredStudents[index_].tags[l]); */
     }
+    console.log(this.tg[0]);
+    l++;
+    f.reset();
   }
-  makeDarkLine() {
-    var line = document.getElementById('dark');
-    var line2 = document.getElementById('dark2');
-    var line3 = document.getElementById('dark3');
 
-    if(!line.className.match('dark')) {
+  searchStdTag(event: any) {
+    this.filteredStudents = this.students.filter((value) => {
+      return value.firstName.toLowerCase().includes(event.target.value.toLowerCase())
+        || value.lastName.toLowerCase().includes(event.target.value.toLowerCase());
+    })
+  }
+
+  makeDarkLine() {
+    var line = document.getElementById('dark1');
+    if (!line.className.match('dark')) {
       line.classList.add('dark');
     }
-    else { line.classList.remove('dark'); }
-
-     if(!line2.className.match('dark2')) {
+    else {
+      line.classList.remove('dark');
+    }
+  }
+  makeDarkLine2() {
+    var line2 = document.getElementById('dark2');
+    if (!line2.className.match('dark')) {
       line2.classList.add('dark');
     }
-    else { line2.classList.remove('dark'); }
+    else {
+      line2.classList.remove('dark');
+    }
+  }
 
-    /*if(!line3.className.match('dark3')) {
+  makeDarkLine3() {
+    var line3 = document.getElementById('dark3');
+    if (!line3.className.match('dark')) {
       line3.classList.add('dark');
     }
-    else { line3.classList.remove('dark') } */
+    else {
+      line3.classList.remove('dark')
+    }
   }
 
 }
-

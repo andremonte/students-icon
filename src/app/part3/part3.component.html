@@ -1,36 +1,36 @@
 <div class="container-fluid background p-5">
-  <div class="container jumbo">
-    <div class="row">
+  <div class="p-0 container jumbo">
+    <div class="row mx-0 justify-content-center pb-4">
       <input
-        #search
-        id="StudentSearch"
-        name="StdSearch"
+        id="dark"
         type="text"
         class="pt-3 text-line"
         placeholder="Search by name"
         (keyup)="searchStd($event)"
+        (click)="makeDarkLine()"
       />
     </div>
-    <div class="row p-4" *ngFor="let std of filteredStudents; let i = index">
-      <div
-        class="img-container p-0 col-xl-1 col-lg-2 col-md-3 col-sm-4 col-xs-2"
-      >
-        <img class="img-profile" src="{{ std.pic }}" />
-      </div>
 
-      <div
-        class="p-0 float-left line col-xl-6 col-lg-6 col-md-6 col-sm-8 col-xs-6"
-      >
-        <h3 style="text-transform: uppercase; font-weight: 700;">
-          {{ std.firstName }} {{ std.lastName }}
-        </h3>
-        <p>Email: {{ std.email }}</p>
-        <p>Company: {{ std.company }}</p>
-        <p>Skill: {{ std.skill }}</p>
-        <p>Average: {{ gradesNum[i] }}%</p>
-        <br />
+    <div *ngFor="let std of filteredStudents; let i = index">
+      <div class="row mx-0 px-0 py-1">
+        <div class="img-container col-xl-2 col-lg-2 col-md-3 col-sm-4 col-xs-2">
+          <img class="img-profile" src="{{ std.pic }}" />
+        </div>
+
+        <div class="p-0 line col-xl-10 col-lg-10 col-md-9 col-sm-8 col-xs-10">
+          <h3 style="text-transform: uppercase; font-weight: 700;">
+            {{ std.firstName }} {{ std.lastName }}
+          </h3>
+
+          <p>Email: {{ std.email }}</p>
+          <p>Company: {{ std.company }}</p>
+          <p>Skill: {{ std.skill }}</p>
+          <p class="mb-1">Average: {{ gradesNum[i] }}%</p>
+        </div>
       </div>
-      <div class="m-0 p-0 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div
+        class=" py-1 m-0 p-0 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
+      >
         <hr width="100%" />
       </div>
     </div>
