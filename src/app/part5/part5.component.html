@@ -1,22 +1,32 @@
 <div class="container-fluid background p-5">
-    <div class="container jumbo">
-      <div class="row">
+    <div class="p-0 container jumbo">
+      <div class="row justify-content-center pb-4">
         <input
+          id='dark'
           type="text"
           class="pt-3 text-line"
           placeholder="Search by name"
           (keyup)="searchStd($event)"
+          (keyup)="makeDarkLine()"
         />
+        <input
+        id='dark2'
+        type="text"
+        class="pt-3 text-line"
+        placeholder="Search by tags"
+        (keyup)="searchStd($event)"
+        (keyup)="makeDarkLine()"
+      />
       </div>
-      <div class="row p-2" *ngFor="let std of filteredStudents; let i = index">
+      <div class="row mx-0 py-1" *ngFor="let std of filteredStudents; let i = index">
         <div
-          class="img-container p-0 col-xl-1 col-lg-2 col-md-3 col-sm-4 col-xs-12"
+          class="img-container col-xl-1 col-lg-2 col-md-3 col-sm-4 col-xs-12"
         >
           <img class="img-profile" src="{{ std.pic }}" />
         </div>
 
         <div
-          class="p-0 float-left line col-xl-9 col-lg-9 col-md-8 col-sm-7 col-xs-11"
+          class="p-0 ml-4 float-left line col-xl-8 col-lg-8 col-md-7 col-sm-6 col-xs-7"
         >
           <h3 style="text-transform: uppercase; font-weight: 700;">
             {{ std.firstName }} {{ std.lastName }}
@@ -24,7 +34,7 @@
           <p>Email: {{ std.email }}</p>
           <p>Company: {{ std.company }}</p>
           <p>Skill: {{ std.skill }}</p>
-          <p class="pb-3">Average: {{ gradesNum[i] }}%</p>
+          <p class="mb-1">Average: {{ gradesNum[i] }}%</p>
         </div>
 
         <div
@@ -45,18 +55,32 @@
             <i class="float-right fas fa-minus fa-2x"></i>
           </div>
         </div>
-        <div *ngIf="std.open" (click)="description(std)">
-          <div *ngFor="let mark of filteredStudents[i].grades; let z = index">
-            <p>
+        <!--GRADES-->
+        <div class="mt-5" *ngIf="std.open" (click)="description(std)">
+          <div
+            *ngFor="let mark of filteredStudents[i].grades; let z = index"
+            class="p-0 float-left line col-xl-12 col-lg-7 col-md-7 col-sm-7 col-xs-12 ppp"
+            >
+            <p class="alignment float-left">
               Test {{ z + 1 }}:
-              <span class="pl-4">{{ filteredStudents[i].grades[z] }}%</span>
+              <span class="pl-3">{{ filteredStudents[i].grades[z] }}%</span>
             </p>
+
           </div>
+          <!--GRADES_END-->
         </div>
+        <input
+        *ngIf="std.open"
+        id='dark3'
+        type="text"
+        class="addTag"
+        (click)="makeDarkLine()"
+        placeholder="Add a tag"
+      >
         <!--Only shows when the user click on the plus sign-->
 
         <div class="m-0 p-0 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <hr width="100%" />
+          <hr width="100%"/>
         </div>
       </div>
     </div>

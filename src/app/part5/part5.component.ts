@@ -1,6 +1,7 @@
 import { StudentsService } from './../students/students.service';
 import { Students } from './../students/students.model';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-part5',
@@ -68,6 +69,35 @@ export class Part5Component implements OnInit {
     else {
       obj.open = false;
     }
+  }
+
+  sendForm(f: NgForm) {
+    if(f.invalid) {
+      return
+    }
+    else {
+    console.log(f.control.value);
+    }
+  }
+  makeDarkLine() {
+    var line = document.getElementById('dark');
+    var line2 = document.getElementById('dark2');
+    var line3 = document.getElementById('dark3');
+
+    if(!line.className.match('dark')) {
+      line.classList.add('dark');
+    }
+    else { line.classList.remove('dark'); }
+
+     if(!line2.className.match('dark2')) {
+      line2.classList.add('dark');
+    }
+    else { line2.classList.remove('dark'); }
+
+    /*if(!line3.className.match('dark3')) {
+      line3.classList.add('dark');
+    }
+    else { line3.classList.remove('dark') } */
   }
 
 }
