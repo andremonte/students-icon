@@ -91,9 +91,7 @@ export class Part5Component implements OnInit {
   }
 
   searchByTag(event: any) {
-    this.filteredStudents = this.tags.filter((value) => {
-      return value.tag[value].toLowerCase().includes(event.target.value.toLowerCase());
-    })
+    alert('Sorry this searchBar is temporary out of Service!');
   }
 
   makeDarkLine() {
