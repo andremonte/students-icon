@@ -1,5 +1,5 @@
+import { Student } from './../students/student.model';
 import { StudentsService } from './../students/students.service';
-import { Student } from '../students/student.model';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -80,20 +80,19 @@ export class Part5Component implements OnInit {
     else {
       var str = f.value.inputTag;
 
-      if (!this.filteredStudents[index_].tags) {
-        this.filteredStudents[index_].tags = [];
-        this.filteredStudents[index_].tags.push(str);
+      if (!this.students[index_].tags) {
+        this.students[index_].tags = [];
+        this.students[index_].tags.push(str);
       } else {
-        this.filteredStudents[index_].tags.push(str);
+        this.students[index_].tags.push(str);
       }
     }
     f.reset();
   }
 
-  searchStdTag(event: any) {
-    this.filteredStudents = this.students.filter((value) => {
-      return value.firstName.toLowerCase().includes(event.target.value.toLowerCase())
-        || value.lastName.toLowerCase().includes(event.target.value.toLowerCase());
+  searchByTag(event: any) {
+    this.filteredStudents = this.tags.filter((value) => {
+      return value.tag[value].toLowerCase().includes(event.target.value.toLowerCase());
     })
   }
 
