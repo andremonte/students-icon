@@ -1,5 +1,5 @@
 import { StudentsService } from './../students/students.service';
-import { Students } from './../students/students.model';
+import { Student } from './../students/student.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Part4Component implements OnInit {
 
-  students: Students[] = [];
+  students: Student[] = [];
   getstudentSub;
-  filteredStudents: Students[];
+  filteredStudents: Student[];
   grades = [];
   gradesNum = [];
 

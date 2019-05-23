@@ -1,4 +1,4 @@
-import { Students } from '../students/students.model';
+import { Student } from '../students/student.model';
 import { Component, OnInit } from '@angular/core';
 import { StudentsService } from './../students/students.service';
 
@@ -9,9 +9,9 @@ import { StudentsService } from './../students/students.service';
 })
 export class Part2Component implements OnInit {
 
-  students: Students[] = [];
+  students: Student[] = [];
   getstudentSub;
-  filteredStudents: Students[];
+  filteredStudents: Student[];
   grades = [];
   gradesNum = [];
   constructor(private studentServ: StudentsService) { }

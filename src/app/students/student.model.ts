@@ -1,5 +1,5 @@
 // responsible to ditact how the object Students is.
-export class Students {
+export class Student {
   city: string;
   company: string;
   email: string;
@@ -10,4 +10,5 @@ export class Students {
   pic: string;
   skill: string;
   open: boolean;
+  tags: string[];
 }

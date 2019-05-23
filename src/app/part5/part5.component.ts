@@ -1,5 +1,5 @@
 import { StudentsService } from './../students/students.service';
-import { Students } from './../students/students.model';
+import { Student } from '../students/student.model';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -9,9 +9,9 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./part5.component.css']
 })
 export class Part5Component implements OnInit {
-  students: Students[] = [];
+  students: Student[] = [];
   getstudentSub;
-  filteredStudents: Students[];
+  filteredStudents: Student[];
   grades = [];
   gradesNum = [];
   tg = [];
@@ -81,7 +81,7 @@ export class Part5Component implements OnInit {
       console.log('Adicionando: ' + str + ' no cara: ' + index_ + ' no index: ' );
       //this.tags.push({index: index_, tag:str});
       //this.filteredStudents[index_].tags = str;
-      this.filteredStudents[index_].tags = str;
+      this.filteredStudents[index_].tags.push(str);
 
       //this.tg.splice(index_, 0, str);
       /*     this.filteredStudents[index_].tags[l] = str;

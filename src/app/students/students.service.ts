@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Students } from './students.model';
+import { Student } from './student.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -14,8 +14,8 @@ export class StudentsService {
   constructor(private http: HttpClient) {}
 
   //casting observable into Students array
-  getAllStudents(): Observable<{students: Students[]}> {
-    return this.http.get<{students: Students[]}>(`${this.studentsUrl}`);
+  getAllStudents(): Observable<{students: Student[]}> {
+    return this.http.get<{students: Student[]}>(`${this.studentsUrl}`);
   }
 
 }
