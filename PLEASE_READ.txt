@@ -1,0 +1,6 @@
+Andre Machado do Monte
+To run this code you will need to
+1 - open the project in visual studio code.
+2 - Install the dependencies
+3 - open terminal and type ng serve
+4 - then open browser and type in the address bar: http://localhost:4200

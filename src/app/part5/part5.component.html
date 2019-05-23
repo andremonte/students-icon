@@ -1,4 +1,3 @@
-
 <div class="container-fluid background p-5">
   <div class="p-0 container jumbo">
     <div class="row mx-0 justify-content-center pb-4">
@@ -65,8 +64,13 @@
       </div>
       <!--GRADES_END-->
       <div *ngIf="std.open" class="row m-0 p-0">
-        <div *ngFor="let tag of filteredStudents[i].tags; let p = index" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <span class="mb-2 btn change-btn-color r">{{ filteredStudents[i].tags[p] }}</span>
+        <div
+          *ngFor="let tag of filteredStudents[i].tags; let p = index"
+          class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
+        >
+          <span class="mb-2 btn change-btn-color r">{{
+            filteredStudents[i].tags[p]
+          }}</span>
         </div>
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <form (submit)="sendForm(f, i)" #f="ngForm">

@@ -79,13 +79,13 @@ export class Part5Component implements OnInit {
     }
     else {
       var str = f.value.inputTag;
-      console.log('Adicionando: ' + str + ' no cara: ' + index_ + ' no index: ' );
-      this.tags.push(str);
-      this.filteredStudents[index_].tags = [];
-      this.filteredStudents[index_].tags.push(str);
-    }
-    for(let i = 0; i < this.tags.length; i++) {
-      console.log(this.tags);
+
+      if (!this.filteredStudents[index_].tags) {
+        this.filteredStudents[index_].tags = [];
+        this.filteredStudents[index_].tags.push(str);
+      } else {
+        this.filteredStudents[index_].tags.push(str);
+      }
     }
     f.reset();
   }

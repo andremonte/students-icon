@@ -1,5 +1,5 @@
 // responsible to ditact how the object Students is.
-export class Student {
+export interface Student {
   city: string;
   company: string;
   email: string;
