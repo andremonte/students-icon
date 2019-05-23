@@ -14,7 +14,7 @@ export class Part5Component implements OnInit {
   filteredStudents: Student[];
   grades = [];
   gradesNum = [];
-  tg = [];
+  tags = [];
 
   constructor(private studentServ: StudentsService) { }
 
@@ -60,6 +60,7 @@ export class Part5Component implements OnInit {
     for (let i = 0; i < this.students.length; i++) {
       this.students[i].open = false;
     }
+
   }
 
   description(obj) {
@@ -79,16 +80,13 @@ export class Part5Component implements OnInit {
     else {
       var str = f.value.inputTag;
       console.log('Adicionando: ' + str + ' no cara: ' + index_ + ' no index: ' );
-      //this.tags.push({index: index_, tag:str});
-      //this.filteredStudents[index_].tags = str;
+      this.tags.push(str);
+      this.filteredStudents[index_].tags = [];
       this.filteredStudents[index_].tags.push(str);
-
-      //this.tg.splice(index_, 0, str);
-      /*     this.filteredStudents[index_].tags[l] = str;
-          console.log(this.filteredStudents[index_].tags[l]); */
     }
-    console.log(this.tg[0]);
-
+    for(let i = 0; i < this.tags.length; i++) {
+      console.log(this.tags);
+    }
     f.reset();
   }
 
