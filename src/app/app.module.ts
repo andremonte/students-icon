@@ -12,7 +12,6 @@ import { Part4Component } from './part4/part4.component';
 import { Part5Component } from './part5/part5.component';
 import { StudentsService } from './students/students.service';
 import { NavbarComponent } from './navbar/navbar.component';
-import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -30,7 +29,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MatInputModule,
     BrowserAnimationsModule
   ],
   providers: [StudentsService],

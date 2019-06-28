@@ -1,3 +1,4 @@
+<button (click)="teste()">Click</button>
 <div class="container-fluid background p-5">
   <div class="p-0 container jumbo">
     <div class="row mx-0 justify-content-center pb-4">
@@ -14,7 +15,7 @@
         type="text"
         class="pt-3 text-line"
         placeholder="Search by tags"
-        (click)="searchByTag($event)"
+        (keyup)="searchByTag($event)"
         (click)="makeDarkLine2()"
       />
     </div>

@@ -14,7 +14,7 @@ export class Part5Component implements OnInit {
   filteredStudents: Student[];
   grades = [];
   gradesNum = [];
-  tags = [];
+  filteredTags: Student[];
 
   constructor(private studentServ: StudentsService) { }
 
@@ -22,8 +22,9 @@ export class Part5Component implements OnInit {
     try {
       this.getstudentSub = this.studentServ.getAllStudents()
         .subscribe(std => {
-          { this.students = std.students; this.getAVG(); /*adicionei*/this.setOpenFalse(); console.log(this.students) }
+          { this.students = std.students; this.getAVG(); /*adicionei*/this.setOpenFalse(); /*console.log(this.students)*/ }
           this.filteredStudents = std.students;
+          this.filteredTags = std.students;
         })
     }
     catch (err) {
@@ -36,6 +37,7 @@ export class Part5Component implements OnInit {
   }
 
   getAVG() {
+
     for (let i = 0; i < this.students.length; i++) {
       this.grades[i] = 0;
       for (let z = 0; z < 8; z++) {
@@ -60,7 +62,6 @@ export class Part5Component implements OnInit {
     for (let i = 0; i < this.students.length; i++) {
       this.students[i].open = false;
     }
-
   }
 
   description(obj) {
@@ -75,7 +76,7 @@ export class Part5Component implements OnInit {
   sendForm(f: NgForm, index_: number) {
 
     if (f.invalid) {
-      return
+      return;
     }
     else {
       var str = f.value.inputTag;
@@ -89,9 +90,26 @@ export class Part5Component implements OnInit {
     }
     f.reset();
   }
-
+teste() {
+  console.log(this.filteredTags);
+}
   searchByTag(event: any) {
-    alert('Sorry this searchBar is temporary out of Service!');
+    this.filteredTags = this.students.filter((value) => {
+        return value.tags.toLowerCase().includes(event.target.value.toLowerCase());
+    })
+
+
+/*    if(!this.students[].tags) {
+    console.log('Não tem nenhuma tag');
+    return;
+   }
+   else {
+     console.log("array ta cheio!")
+    this.filteredTags = this.students.filter((value) => {
+
+      return value.tags.includes(event.target.value);
+    })
+   } */
   }
 
   makeDarkLine() {
