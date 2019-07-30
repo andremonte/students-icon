@@ -94,9 +94,9 @@ teste() {
   console.log(this.filteredTags);
 }
   searchByTag(event: any) {
-    this.filteredTags = this.students.filter((value) => {
+   /*  this.filteredTags = this.students.filter((value) => {
         return value.tags.toLowerCase().includes(event.target.value.toLowerCase());
-    })
+    }) */
 
 
 /*    if(!this.students[].tags) {
