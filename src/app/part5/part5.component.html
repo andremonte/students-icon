@@ -1,4 +1,3 @@
-<button (click)="teste()">Click</button>
 <div class="container-fluid background p-5">
   <div class="p-0 container jumbo">
     <div class="row mx-0 justify-content-center pb-4">
@@ -51,7 +50,8 @@
 
       <!--GRADES-->
       <div class="row m-0 p-0">
-        <div class="mt-4" *ngIf="std.open" (click)="description(std)">
+        <div (click)="description(std)"></div>
+        <div class="mt-4" *ngIf="std.open">
           <div
             *ngFor="let mark of filteredStudents[i].grades; let z = index"
             class="pl-5 float-left line col-xl-8 col-lg-8 col-md-7 col-sm-8 col-xs-6"

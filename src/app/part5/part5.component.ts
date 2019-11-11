@@ -57,6 +57,12 @@ export class Part5Component implements OnInit {
     })
   }
 
+  searchByTag(event: any) {
+    this.filteredStudents = this.students.filter((value) => {
+      return value.tags.includes(event.target.value);
+    })
+  }
+
   //adicionei
   setOpenFalse() {
     for (let i = 0; i < this.students.length; i++) {
@@ -90,27 +96,25 @@ export class Part5Component implements OnInit {
     }
     f.reset();
   }
-teste() {
-  console.log(this.filteredTags);
-}
-  searchByTag(event: any) {
-   /*  this.filteredTags = this.students.filter((value) => {
-        return value.tags.toLowerCase().includes(event.target.value.toLowerCase());
-    }) */
 
-
-/*    if(!this.students[].tags) {
-    console.log('Não tem nenhuma tag');
-    return;
-   }
-   else {
-     console.log("array ta cheio!")
+  /* searchByTag(event: any) {
     this.filteredTags = this.students.filter((value) => {
-
-      return value.tags.includes(event.target.value);
+      return(value.firstName.toLowerCase().includes(event.target.value.toLowerCase()));
+      //includes(event.target.value, 0);
     })
-   } */
-  }
+
+    alert("I am currently working on it!");
+    if(!this.students[0].tags) {
+      console.log('Não tem nenhuma tag');
+      return;
+    }
+    else {
+      console.log("array ta cheio!")
+      this.filteredTags = this.students.filter((value) => {
+        return value.tags.includes(event.target.value);
+      })
+    }
+  } */
 
   makeDarkLine() {
     var line = document.getElementById('dark1');
