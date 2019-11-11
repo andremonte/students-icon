@@ -59,8 +59,7 @@ export class Part5Component implements OnInit {
 
   searchByTag(event: any) {
     this.filteredStudents = this.students.filter((value) => {
-      return value.tags[0];
-      //return value.tags.includes(event.target.value);
+      return value.tags.includes(event.target.value);
     })
   }
 
