@@ -59,7 +59,8 @@ export class Part5Component implements OnInit {
 
   searchByTag(event: any) {
     this.filteredStudents = this.students.filter((value) => {
-      return value.tags.includes(event.target.value);
+      return value.tags[0];
+      //return value.tags.includes(event.target.value);
     })
   }
 
@@ -96,26 +97,6 @@ export class Part5Component implements OnInit {
     }
     f.reset();
   }
-tt() {
-  this.filteredStudents = this.students.filter((value) => {
-    console.log(value);
-    //return value.tags.includes(event.target.value.toLowerCase());
-  })
-}
-imprimir() {
-  if(!this.students[0].tags) {
-    console.log("Todas as tags estão vazias");
-    console.log(this.filteredTags);
-    return;
-  }
-  else {
-
-    for(let i = 0; i < this.filteredTags.length; i++) {
-      console.log(this.filteredTags[i].tags);
-      return this.filteredTags[i].tags;
-    }
-  }
-}
 
   /* searchByTag(event: any) {
     this.filteredTags = this.students.filter((value) => {
