@@ -57,9 +57,23 @@ export class Part5Component implements OnInit {
     })
   }
 
-  searchByTag(event: any) {
+/*   searchByTag(event: any) {
     this.filteredStudents = this.students.filter((value) => {
-      return value.tags.includes(event.target.value);
+      if(value.tags) {
+        return value.tags[0].includes(event.target.value);
+      }
+      else {
+        return value;
+      }
+    })
+  } */
+
+   searchByTag(event: any) {
+    this.filteredStudents = this.students.filter(value => {
+    if (value.tags) {
+      return value.tags[0].includes(event.target.value);
+    }
+    if(!event.target.value.length) return value;
     })
   }
 
