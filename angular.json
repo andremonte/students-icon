@@ -133,5 +133,8 @@
       }
     }
   },
-  "defaultProject": "students-app"
+  "defaultProject": "students-app",
+  "cli": {
+    "analytics": "f53a31ef-425c-4a94-a809-52f4623fa25d"
+  }
 }
