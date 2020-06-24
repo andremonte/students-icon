@@ -54,26 +54,4 @@ export class Part3Component implements OnInit {
     })
   }
 
-  makeDarkLine() {
-    var line = document.getElementById('dark');
-
-    if (!line.className.match('dark')) {
-      line.classList.add('dark');
-    }
-    else {
-      line.classList.remove('dark');
-    }
-  }
-  removeDarkLine() {
-    var line = document.getElementById('dark');
-
-    if (line.className.match('dark')) {
-      line.classList.remove('dark');
-    }
-    else {
-      line.classList.add('dark');
-    }
-  }
-
-
 }

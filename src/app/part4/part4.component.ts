@@ -70,13 +70,4 @@ export class Part4Component implements OnInit {
     }
   }
 
-  removeDarkLine() {
-    var line = document.getElementById('dark');
-
-    if(line.className.match('dark')) {
-      line.classList.remove('dark');
-    }
-    else { line.classList.add('dark');
-    }
-  }
 }

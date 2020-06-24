@@ -2,12 +2,10 @@
   <div class="p-0 container jumbo">
     <div class="row mx-0 justify-content-center pb-4">
       <input
-        id="dark"
         type="text"
-        class="pt-3 text-line"
+        class="underline-search pt-3 text-line"
         placeholder="Search by name"
         (keyup)="searchStd($event)"
-        (click)="removeDarkLine()"
       />
     </div>
 
@@ -19,12 +17,12 @@
 
         <div class="p-0 line col-xl-10 col-lg-10 col-md-9 col-sm-8 col-xs-10">
           <div *ngIf="!std.open" class="float-right float-top">
-            <div class="signal-color" (click)="description(std)">
+            <div class="plus" (click)="description(std)">
               <i class="pr-4 float-right fas fa-plus fa-2x"></i>
             </div>
           </div>
           <div *ngIf="std.open">
-            <div class="signal-color" (click)="description(std)">
+            <div class="plus" (click)="description(std)">
               <i class="pr-4 float-right fas fa-minus fa-2x"></i>
             </div>
           </div>
@@ -36,12 +34,13 @@
           <p>Company: {{ std.company }}</p>
           <p>Skill: {{ std.skill }}</p>
           <p class="mb-1">Average: {{ gradesNum[i] }}%</p>
+
         </div>
       </div>
       <!--Only shows when the user click on the plus sign-->
 
       <!--GRADES-->
-      <div class="row m-0 p-0">
+      <div class="row">
         <div class="mt-4" *ngIf="std.open" (click)="description(std)">
           <div
             *ngFor="let mark of filteredStudents[i].grades; let z = index"

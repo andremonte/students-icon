@@ -57,17 +57,6 @@ export class Part5Component implements OnInit {
     })
   }
 
-/*   searchByTag(event: any) {
-    this.filteredStudents = this.students.filter((value) => {
-      if(value.tags) {
-        return value.tags[0].includes(event.target.value);
-      }
-      else {
-        return value;
-      }
-    })
-  } */
-
    searchByTag(event: any) {
     this.filteredStudents = this.students.filter(value => {
     if (value.tags) {
@@ -94,7 +83,6 @@ export class Part5Component implements OnInit {
   }
 
   sendForm(f: NgForm, index_: number) {
-
     if (f.invalid) {
       return;
     }
@@ -109,54 +97,6 @@ export class Part5Component implements OnInit {
       }
     }
     f.reset();
-  }
-
-  /* searchByTag(event: any) {
-    this.filteredTags = this.students.filter((value) => {
-      return(value.firstName.toLowerCase().includes(event.target.value.toLowerCase()));
-      //includes(event.target.value, 0);
-    })
-
-    alert("I am currently working on it!");
-    if(!this.students[0].tags) {
-      console.log('Não tem nenhuma tag');
-      return;
-    }
-    else {
-      console.log("array ta cheio!")
-      this.filteredTags = this.students.filter((value) => {
-        return value.tags.includes(event.target.value);
-      })
-    }
-  } */
-
-  makeDarkLine() {
-    var line = document.getElementById('dark1');
-    if (!line.className.match('dark')) {
-      line.classList.add('dark');
-    }
-    else {
-      line.classList.remove('dark');
-    }
-  }
-  makeDarkLine2() {
-    var line2 = document.getElementById('dark2');
-    if (!line2.className.match('dark')) {
-      line2.classList.add('dark');
-    }
-    else {
-      line2.classList.remove('dark');
-    }
-  }
-
-  makeDarkLine3() {
-    var line3 = document.getElementById('dark3');
-    if (!line3.className.match('dark')) {
-      line3.classList.add('dark');
-    }
-    else {
-      line3.classList.remove('dark')
-    }
   }
 
 }

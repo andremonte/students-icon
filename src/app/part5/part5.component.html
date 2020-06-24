@@ -2,20 +2,16 @@
   <div class="p-0 container jumbo">
     <div class="row mx-0 justify-content-center pb-4">
       <input
-        id="dark1"
         type="text"
-        class="pt-3 text-line"
+        class="underline-search pt-3 text-line"
         placeholder="Search by name"
         (keyup)="searchStd($event)"
-        (click)="makeDarkLine()"
       />
       <input
-        id="dark2"
         type="text"
-        class="pt-3 text-line"
+        class="underline-search pt-3 text-line"
         placeholder="Search by tags"
         (keyup)="searchByTag($event)"
-        (click)="makeDarkLine2()"
       />
     </div>
 
@@ -49,7 +45,7 @@
       <!--Only shows when the user click on the plus sign-->
 
       <!--GRADES-->
-      <div class="row m-0 p-0">
+      <div class="row">
         <div (click)="description(std)"></div>
         <div class="mt-4" *ngIf="std.open">
           <div
@@ -64,7 +60,8 @@
         </div>
       </div>
       <!--GRADES_END-->
-      <div *ngIf="std.open" class="row m-0 p-0">
+
+      <div *ngIf="std.open" class="row">
         <div
           *ngFor="let tag of filteredStudents[i].tags; let p = index"
           class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
@@ -78,11 +75,9 @@
             <input
               *ngIf="std.open"
               name="inputTag"
-              id="dark3"
               type="text"
-              class="addTag ajust"
+              class="underline-search addTag ajust"
               ngModel
-              (click)="makeDarkLine3()"
               placeholder="Add a tag"
             />
             <a type="submit"></a>
@@ -93,8 +88,7 @@
       <!--Only shows when the user click on the plus sign-->
 
       <div
-        class=" py-1 m-0 p-0 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
-      >
+        class=" py-1 m-0 p-0 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <hr width="100%" />
       </div>
     </div>
