@@ -2,7 +2,7 @@
   width: 110px;
   height: 110px;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid rgb(193, 185, 185);
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -25,7 +25,7 @@ p {
 
 .jumbo {
   border-radius: 10px;
-  border: 1px solid #888888;
+  border: 1px solid rgb(222, 222, 222);
   background-color: white;
   padding-left: 150px;
   padding-right: 150px;
